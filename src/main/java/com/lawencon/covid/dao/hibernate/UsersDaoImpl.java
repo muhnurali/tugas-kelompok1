@@ -10,11 +10,10 @@ import com.lawencon.covid.model.Users;
 public class UsersDaoImpl extends BaseHibernate implements UsersDao {
 
 	@Override
-	public Users cekUsers(String username, String password) throws Exception {
-		Query q = em.createQuery("from Users where username = :username and password = :password");
-		q.setParameter("username", username);
-		q.setParameter("password", password);
-		return (Users) q.getResultList();
+	public Users cekUsers(Users user) throws Exception {
+		Query q = em.createQuery("from Users where uname = :username and pwd = :password")
+				.setParameter("username", user.getUname()).setParameter("password", user.getPwd());
+		return (Users) q.getResultList().get(0);
 	}
 
 	@Override

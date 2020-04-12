@@ -17,10 +17,13 @@ public class Users {
 	private String nama;
 	
 	@Column(unique = true, nullable = false)
-	private String username;
+	private String uname;
 	
 	@Column(nullable = false)
-	private String password, posisi;	
+	private String pwd;
+	
+	@Column(nullable = false)
+	private String posisi = "user";
 
 	public Integer getIdUser() {
 		return idUser;
@@ -38,20 +41,20 @@ public class Users {
 		this.nama = nama;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUname() {
+		return uname;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPwd() {
+		return pwd;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 
 	public String getPosisi() {

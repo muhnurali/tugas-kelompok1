@@ -15,7 +15,6 @@ import com.lawencon.covid.model.CovidCase;
 public class CovidCaseServiceImpl implements CovidCaseService {
 
 	@Autowired
-	@Qualifier
 	CovidCaseDao covidCaseDao;
 	
 	@Override

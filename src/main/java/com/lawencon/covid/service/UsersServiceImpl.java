@@ -15,15 +15,11 @@ import com.lawencon.covid.model.Users;
 public class UsersServiceImpl implements UsersService {
 
 	@Autowired
-	@Qualifier
 	UsersDao usersDao;
 	
 	@Override
-	public void cekUsers(String username, String password) throws Exception {
-		Users u = usersDao.cekUsers(username, password);
-		if (!u.getUsername().equals(username) && !u.getPassword().equals(password)) {
-			throw new Exception();
-		}	
+	public Users cekUsers(Users user) throws Exception {
+		return usersDao.cekUsers(user);
 	}
 
 	@Override
